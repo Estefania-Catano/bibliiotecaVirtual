@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Administrador - Biblioteca Virtual</title>
+    <link rel="stylesheet" href="assets/css/stylesheet.css" />
+</head>
+
+<body>
+    <header class="header">
+        <h1>Panel de Administración</h1>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="perfil.html">Mi perfil</a></li>
+                <li><a href="login.html">Cerrar sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contenido admin">
+        <section class="formulario-libros">
+            <h2>Registrar Nuevo Libro</h2>
+            <form>
+                <input type="text" placeholder="Título del libro" required>
+                <input type="text" placeholder="Autor" required>
+                <input type="text" placeholder="Género" required>
+                <input type="number" placeholder="Cantidad" required>
+                <button type="submit">Agregar libro</button>
+            </form>
+        </section>
+
+        <section class="formulario-libros">
+            <h2>Dar de Baja Libro</h2>
+            <form>
+                <input type="text" placeholder="ID o Título del libro" required>
+                <button type="submit">Dar de baja</button>
+            </form>
+        </section>
+
+        <section class="dashboard">
+            <h2>Dashboard</h2>
+            <div class="tarjetas">
+                <div class="tarjeta">
+                    <h3>📘 Libro más solicitado</h3>
+                    <p>"Cien Años de Soledad"</p>
+                </div>
+                <div class="tarjeta">
+                    <h3>👤 Usuario más activo</h3>
+                    <p>mariana2025</p>
+                </div>
+                <div class="tarjeta">
+                    <h3>📦 Total de libros</h3>
+                    <p>158</p>
+                </div>
+                <div class="tarjeta">
+                    <h3>📈 Préstamos este mes</h3>
+                    <p>42</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ideas Futuras
+        Esta página es visual y funcional a nivel de interfaz, pero no tiene conexión con bases de datos aún. Algunas
+        mejoras para más adelante:Conectarla con una base de datos para registrar libros realmente.Mostrar los datos del dashboard de forma dinámica con PHP, JavaScript, o Python.Añadir filtros o tablas dinámicas. -->
+    </main>
+</body>
+
+</html>
