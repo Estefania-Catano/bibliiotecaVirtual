@@ -15,3 +15,7 @@
 - El usuario debe escoger la categoria del libro
 - El usuario debe escoger el libro a devolver
 - El usuario no puede devolver un libro no prestado
+
+** Consultar libros disponibles **
+- el usuario debe escoger la categoria que quiere consultar
+- El sistema debe especificar el estado de los libros actuales

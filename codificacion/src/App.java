@@ -53,14 +53,22 @@ public class App {
                                         }
                                             break;
                                         case 2:
+                                        if (neuromantePrestado == 0) {
                                             System.out.println("Ha seleccionado el libro 'Neuromante'.");
                                             cantidadLibros++;
                                             neuromantePrestado++;
+                                        } else {
+                                            System.out.println("El libro 'Neuromante' ya está prestado.");
+                                        }
                                             break;
                                         case 3:
+                                        if (fundacionPrestado == 0) {
                                             System.out.println("Ha seleccionado el libro 'Fundación'.");
                                             cantidadLibros++;
                                             fundacionPrestado++;
+                                        }else{
+                                            System.out.println("El libro 'Fundación' ya está prestado.");
+                                        }
                                             break;
                                         case 0:
                                             System.out.println("Regresando al menú principal.");
@@ -77,19 +85,31 @@ public class App {
                                     opcionLibro = sc.nextInt();
                                     switch (opcionLibro) {
                                         case 1:
+                                        if (bajoEstrellaPrestado == 0) {
                                             System.out.println("Ha seleccionado el libro 'Bajo la misma estrella'.");
                                             cantidadLibros++;
                                             bajoEstrellaPrestado++;
+                                        }else{
+                                            System.out.println("El libro 'Bajo la misma estrella' ya está prestado.");
+                                        }
                                             break;
                                         case 2:
+                                        if (corredorLaberintoPrestado == 0) {
                                             System.out.println("Ha seleccionado el libro 'El corredor del laberinto'.");
                                             cantidadLibros++;
                                             corredorLaberintoPrestado++;
+                                        }else{
+                                            System.out.println("El libro 'El corredor del laberinto' ya está prestado.");
+                                        }
                                             break;
                                         case 3:
+                                        if (divergentePrestado == 0) {
                                             System.out.println("Ha seleccionado el libro 'Divergente'.");
                                             cantidadLibros++;
                                             divergentePrestado++;
+                                        }else{
+                                            System.out.println("El libro 'Divergente' ya está prestado.");
+                                        }
                                             break;
                                         case 0:
                                             System.out.println("Regresando al menú principal.");
@@ -106,18 +126,33 @@ public class App {
                                     opcionLibro = sc.nextInt();
                                     switch (opcionLibro) {
                                         case 1:
+                                        if (principitoPrestado == 0) {
                                             System.out.println("Ha seleccionado el libro 'El principito'.");
                                             cantidadLibros++;
+                                            principitoPrestado++;
+                                        }else{
+                                            System.out.println("El libro 'El principito' ya está prestado.");
+                                        }
                                             break;
                                         case 2:
+                                        if (monstruosPrestado == 0) {
                                             System.out.println("Ha seleccionado el libro 'Donde viven los monstruos'.");
                                             cantidadLibros++;
+                                            monstruosPrestado++;
+                                        }else{
+                                            System.out.println("El libro 'Donde viven los monstruos' ya está prestado.");
+                                        }
                                             break;
                                         case 3:
+                                        if (harryPrestado == 0) {
                                             System.out.println(
                                                     "Ha seleccionado el libro 'Harry Potter y la piedra filosofal'.");
                                             cantidadLibros++;
-                                            break;
+                                            harryPrestado++;
+                                        }else{
+                                            System.out.println("El libro 'Harry Potter y la piedra filosofal' ya está prestado.");
+                                        }
+                                        break;
                                         case 0:
                                             System.out.println("Regresando al menú principal.");
                                             break;
@@ -125,13 +160,7 @@ public class App {
                                             System.out.println("Opción no válida.");
                                     }
                                     break;
-                                /*
-                                 * ============================================================= Caso 3
-                                 * Categoria
-                                 * =============================================================================
-                                 * =============================================================================
-                                 * =====
-                                 */
+/*============================================================= Caso 3 Categoria ===============================================================================================================================================================*/
 
                                 default:
                                     break;
@@ -184,19 +213,31 @@ public class App {
                                     opcionLibro = sc.nextInt();
                                     switch (opcionLibro) {
                                         case 1:
+                                        if (bajoEstrellaPrestado == 1) {
                                             System.out.println("Ha devuelto el libro 'Bajo la misma estrella'.");
                                             cantidadLibros--;
                                             bajoEstrellaPrestado--;
+                                        }else{
+                                            System.out.println("No ha tomado el libro 'Bajo la misma estrella'. Por favor, verifique el libro que desea devolver.");
+                                        }
                                             break;
                                         case 2:
+                                        if (corredorLaberintoPrestado == 1) {
                                             System.out.println("Ha devuelto el libro 'El corredor del laberinto'.");
                                             cantidadLibros--;
                                             corredorLaberintoPrestado--;
+                                        }else{
+                                            System.out.println("No ha tomado el libro 'El corredor del laberinto'. Por favor, verifique el libro que desea devolver.");
+                                        }
                                             break;
                                         case 3:
+                                        if (divergentePrestado == 1) {
                                             System.out.println("Ha devuelto el libro 'Divergente'.");
                                             cantidadLibros--;
                                             divergentePrestado--;
+                                        }else{
+                                            System.out.println("No ha tomado el libro 'Divergente'. Por favor, verifique el libro que desea devolver.");
+                                        }
                                             break;
                                         case 0:
                                             System.out.println("Regresando al menú principal.");
@@ -213,20 +254,32 @@ public class App {
                                     opcionLibro = sc.nextInt();
                                     switch (opcionLibro) {
                                         case 1:
+                                        if (principitoPrestado == 1) {
                                             System.out.println("Ha devuelto el libro 'El principito'.");
                                             cantidadLibros--;
                                             principitoPrestado--;
+                                        } else {
+                                            System.out.println("No ha tomado el libro 'El principito'. Por favor, verifique el libro que desea devolver.");
+                                        }
                                             break;
                                         case 2:
+                                        if (monstruosPrestado == 1) {
                                             System.out.println("Ha devuelto el libro 'Donde viven los monstruos'.");
                                             cantidadLibros--;
                                             monstruosPrestado--;
+                                        } else {
+                                            System.out.println("No ha tomado el libro 'Donde viven los monstruos'. Por favor, verifique el libro que desea devolver.");
+                                        }
                                             break;
                                         case 3:
+                                        if (harryPrestado == 1) {
                                             System.out.println(
                                                     "Ha devuelto el libro 'Harry Potter y la piedra filosofal'.");
                                             cantidadLibros--;
                                             harryPrestado--;
+                                        } else {
+                                            System.out.println("No ha tomado el libro 'Harry Potter y la piedra filosofal'. Por favor, verifique el libro que desea devolver.");
+                                        }
                                             break;
                                         case 0:
                                             System.out.println("Regresando al menú principal.");
@@ -241,7 +294,79 @@ public class App {
                             }
                             break;
 /*============================================================= Caso 2 Menu ===============================================================================================================================================================*/
-
+/*============================================================= Caso 3 Menu Sin definir ===============================================================================================================================================================*/
+                        case 3:
+                            System.out.println(
+                                    "Seleccione la categoría del libro que desea renovar: \n1. Ciencia ficción\n2. Juveniles\n3. Infantiles");
+                            opcionCategoria = sc.nextInt();
+                            switch (opcionCategoria) {
+                            }
+/*============================================================= Caso 3 Menu ===============================================================================================================================================================*/
+/*============================================================= Caso 4 Menu ===============================================================================================================================================================*/
+                        case 4:
+                            System.out.println("Libros disponibles: \n1. Ciencia ficción\n2. Juveniles\n3. Infantiles");
+                            opcionCategoria = sc.nextInt();
+                            switch (opcionCategoria) {
+                                case 1:
+                                    System.out.println(
+                                            "Ciencia ficción:\n1. Dune\n2. Neuromante\n3. Fundación");
+                                    if (dunePrestado == 0) {
+                                        System.out.println("Dune está disponible.");
+                                    } else {
+                                        System.out.println("Dune no está disponible.");
+                                    }
+                                    if (neuromantePrestado == 0) {
+                                        System.out.println("Neuromante está disponible.");
+                                    } else {
+                                        System.out.println("Neuromante no está disponible.");
+                                    }
+                                    if (fundacionPrestado == 0) {
+                                        System.out.println("Fundación está disponible.");
+                                    } else {
+                                        System.out.println("Fundación no está disponible.");
+                                    }
+                                    break;
+                                case 2:
+                                    System.out.println(
+                                            "Juveniles:\n1. Bajo la misma estrella\n2. El corredor del laberinto\n3. Divergente");
+                                    if (bajoEstrellaPrestado == 0) {
+                                        System.out.println("Bajo la misma estrella está disponible.");
+                                    } else {
+                                        System.out.println("Bajo la misma estrella no está disponible.");
+                                    }
+                                    if (corredorLaberintoPrestado == 0) {
+                                        System.out.println("El corredor del laberinto está disponible.");
+                                    } else {
+                                        System.out.println("El corredor del laberinto no está disponible.");
+                                    }
+                                    if (divergentePrestado == 0) {
+                                        System.out.println("Divergente está disponible.");
+                                    } else {
+                                        System.out.println("Divergente no está disponible.");
+                                    }
+                                    break;
+                                case 3:
+                                    System.out.println(
+                                            "Infantiles:\n1. El principito\n2. Donde viven los monstruos\n3. Harry Potter y la piedra filosofal");
+                                    if (principitoPrestado == 0) {
+                                        System.out.println("El principito está disponible.");
+                                    } else {
+                                        System.out.println("El principito no está disponible.");
+                                    }
+                                    if (monstruosPrestado == 0) {
+                                        System.out.println("Donde viven los monstruos está disponible.");
+                                    } else {
+                                        System.out.println("Donde viven los monstruos no está disponible.");
+                                    }
+                                    if (harryPrestado == 0) {
+                                        System.out.println("Harry Potter y la piedra filosofal está disponible.");
+                                    } else {
+                                        System.out.println("Harry Potter y la piedra filosofal no está disponible.");
+                                    }
+                                    break;
+                                }
+                            break;
+/*============================================================= Caso 4 Menu ===============================================================================================================================================================*/
                         default:
                             System.out.println(
                                     "Opción no válida. Por favor, seleccione una opción del menú.");
