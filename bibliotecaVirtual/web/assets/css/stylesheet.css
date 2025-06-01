@@ -211,6 +211,9 @@ body {
 .card:hover .card-img-top {
   transform: scale(1.1); /* Aumenta el tamaño al 105% */
 }
+.textoCatalogoBusqueda h2, .textoCatalogoBusqueda p{
+  color: #000;
+}
 
 /* ==========================================   Catalogo  =============================================================== */
 
