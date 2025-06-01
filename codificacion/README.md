@@ -3,7 +3,7 @@
 * El usuario debe escoger entre las siguientes opciones
   - Realizar un prestamo de libro
   - Realizar una Devolución de libro
-  - Renovar el prestamo de un libro
+  - Consultar prestamos activos
   - Consultar libros disponibles
   - Salir
 ** Prestamo de libro **

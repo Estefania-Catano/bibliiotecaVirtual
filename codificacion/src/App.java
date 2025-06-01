@@ -28,7 +28,7 @@ public class App {
                 int opcionLibro = 0;
                 do {
                     System.out.println(
-                            "Seleccione una opción: \n1. Realizar un prestamo de libro\n2. Realizar una Devolución de libro\n3. Renovar el prestamo de un libro\n4. Consultar libros disponibles\n5. Salir");
+                            "Seleccione una opción: \n1. Realizar un prestamo de libro\n2. Realizar una Devolución de libro\n3. Consultar prestamos activos\n4. Consultar libros disponibles\n5. Salir");
                     opcionMenu = sc.nextInt();
                     switch (opcionMenu) {
 /*============================================================= Caso 1 Menu ===============================================================================================================================================================*/
@@ -296,11 +296,35 @@ public class App {
 /*============================================================= Caso 2 Menu ===============================================================================================================================================================*/
 /*============================================================= Caso 3 Menu Sin definir ===============================================================================================================================================================*/
                         case 3:
-                            System.out.println(
-                                    "Seleccione la categoría del libro que desea renovar: \n1. Ciencia ficción\n2. Juveniles\n3. Infantiles");
-                            opcionCategoria = sc.nextInt();
-                            switch (opcionCategoria) {
+                            System.out.println("Libros prestados:");
+                            if (dunePrestado == 1) {
+                                System.out.println("Dune");
                             }
+                            if (neuromantePrestado == 1) {
+                                System.out.println("Neuromante");
+                            }
+                            if (fundacionPrestado == 1) {
+                                System.out.println("Fundación");
+                            }
+                            if (bajoEstrellaPrestado == 1) {
+                                System.out.println("Bajo la misma estrella");
+                            }
+                            if (corredorLaberintoPrestado == 1) {
+                                System.out.println("El corredor del laberinto");
+                            }
+                            if (divergentePrestado == 1) {
+                                System.out.println("Divergente");
+                            }
+                            if (principitoPrestado == 1) {
+                                System.out.println("El principito");
+                            }
+                            if (monstruosPrestado == 1) {
+                                System.out.println("Donde viven los monstruos");
+                            }
+                            if (harryPrestado == 1) {
+                                System.out.println("Harry Potter y la piedra filosofal");
+                            }
+                            break;
 /*============================================================= Caso 3 Menu ===============================================================================================================================================================*/
 /*============================================================= Caso 4 Menu ===============================================================================================================================================================*/
                         case 4:
