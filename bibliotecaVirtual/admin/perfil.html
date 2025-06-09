@@ -2,71 +2,231 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Administrador - Biblioteca Virtual</title>
-    <link rel="stylesheet" href="assets/css/stylesheet.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profesores - BibliotecaVirtual </title>
+    <link rel="stylesheet" href="../admin/assets/css/stilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWTKbooA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-    <header class="header">
-        <h1>Panel de Administración</h1>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="catalogo.html">Catálogo</a></li>
-                <li><a href="perfil.html">Mi perfil</a></li>
-                <li><a href="login.html">Cerrar sesión</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main class="contenido admin">
-        <section class="formulario-libros">
-            <h2>Registrar Nuevo Libro</h2>
-            <form>
-                <input type="text" placeholder="Título del libro" required>
-                <input type="text" placeholder="Autor" required>
-                <input type="text" placeholder="Género" required>
-                <input type="number" placeholder="Cantidad" required>
-                <button type="submit">Agregar libro</button>
-            </form>
-        </section>
-
-        <section class="formulario-libros">
-            <h2>Dar de Baja Libro</h2>
-            <form>
-                <input type="text" placeholder="ID o Título del libro" required>
-                <button type="submit">Dar de baja</button>
-            </form>
-        </section>
-
-        <section class="dashboard">
-            <h2>Dashboard</h2>
-            <div class="tarjetas">
-                <div class="tarjeta">
-                    <h3>📘 Libro más solicitado</h3>
-                    <p>"Cien Años de Soledad"</p>
-                </div>
-                <div class="tarjeta">
-                    <h3>👤 Usuario más activo</h3>
-                    <p>mariana2025</p>
-                </div>
-                <div class="tarjeta">
-                    <h3>📦 Total de libros</h3>
-                    <p>158</p>
-                </div>
-                <div class="tarjeta">
-                    <h3>📈 Préstamos este mes</h3>
-                    <p>42</p>
-                </div>
+    <div class="wrapper">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <img src="../admin/assets/images/1.png" alt="Logo" width="70px" height="50px" class="logo-sidebar h3"> Biblioteca Virtual
             </div>
-        </section>
+            <nav class="sidebar-nav">
+                <div class="sidebar-section-title">PRINCIPAL</div>
+                <a href="../admin/dashboard.html" class="nav-item"> <i class="fas fa-th-large icon"></i>Dashboard
+                </a>
+                <a href="../admin/prestamos.html" class="nav-item">
+                    <i class="fas fa-handshake icon"></i>Préstamos
+                </a>
+                <a href="../admin/devoluciones.html" class="nav-item">
+                    <i class="fas fa-undo icon"></i>Devoluciones
+                </a>
+                <!-- <a href="../admin/item.html" class="nav-item">
+                    <i class="fas fa-exclamation-triangle icon"></i>Pérdidas
+                </a> -->
 
-        <!-- Ideas Futuras
-        Esta página es visual y funcional a nivel de interfaz, pero no tiene conexión con bases de datos aún. Algunas
-        mejoras para más adelante:Conectarla con una base de datos para registrar libros realmente.Mostrar los datos del dashboard de forma dinámica con PHP, JavaScript, o Python.Añadir filtros o tablas dinámicas. -->
-    </main>
+                <div class="sidebar-section-title mt-3">LIBROS</div>
+                <a href="../admin/catalogo.html" class="nav-item">
+                    <i class="fas fa-book icon"></i>Libros
+                </a>
+                <!-- <a href="autores_puro_interactivo.html" class="nav-item">
+                    <i class="fas fa-user-tie icon"></i>Autores
+                </a> -->
+                <a href="../admin/categorias.html" class="nav-item">
+                    <i class="fas fa-bookmark icon"></i>Categorías
+                </a>
+                <!-- <a href="ubicaciones_puro_interactivo.html" class="nav-item">
+                    <i class="fas fa-map-marker-alt icon"></i>Ubicaciones
+                </a> -->
+
+                <div class="sidebar-section-title mt-3">USUARIOS</div>
+                <a href="../admin/estudiantes.html" class="nav-item">
+                    <i class="fas fa-user-graduate icon"></i>Estudiantes
+                </a>
+                <a href="profesores_puro_interactivo.html" class="nav-item active">
+                    <i class="fas fa-chalkboard-teacher icon"></i>Profesores
+                </a>
+            </nav>
+        </div>
+        <div class="page-content">
+            <header class="navbar">
+                <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+
+                <nav class="navbar-nav">
+                    <a href="#" class="nav-link"><i class="fas fa-bell icon-lg text-primary"></i></a>
+                    <a href="#" class="nav-link"><i class="fas fa-user-circle icon-lg text-secondary"></i></a>
+                    <div class="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">Admin</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="../admin/perfil.html">Perfil</a>
+                            <a class="dropdown-item" href="#">Configuración</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Cerrar Sesión</a>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+
+            <div class="container">
+                <div class="header-content">
+                    <div>
+                        <h1>Profesores</h1>
+                        <p class="breadcrumb">Home / Profesores</p>
+                    </div>
+                    <button class="btn btn-primary" id="openAddForm">
+                        <i class="fas fa-plus icon-btn"></i>Nuevo Profesor
+                    </button>
+                </div>
+
+                <div class="table-container">
+                    <div class="table-actions">
+                        <div class="search-input">
+                            <i class="fas fa-search search-icon"></i>
+                            <input type="text" placeholder="Buscar:">
+                        </div>
+                    </div>
+
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>ID Profesor <i class="fas fa-sort sort-icon"></i></th>
+                                <th>Documento <i class="fas fa-sort sort-icon"></i></th>
+                                <th>Nombres <i class="fas fa-sort sort-icon"></i></th>
+                                <th>Apellidos <i class="fas fa-sort sort-icon"></i></th>
+                                <th>Teléfono <i class="fas fa-sort sort-icon"></i></th>
+                                <th>Especialidad <i class="fas fa-sort sort-icon"></i></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><i class="fas fa-chalkboard-teacher icon-table"></i>P-001</td>
+                                <td>11223344</td>
+                                <td>Carlos</td>
+                                <td>Gómez</td>
+                                <td>3101234567</td>
+                                <td>Matemáticas</td>
+                                <td class="actions">
+                                    <button class="btn btn-warning btn-sm" title="Editar"><i
+                                            class="fas fa-pen"></i></button>
+                                    <button class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><i class="fas fa-chalkboard-teacher icon-table"></i>P-002</td>
+                                <td>22334455</td>
+                                <td>Ana</td>
+                                <td>Díaz</td>
+                                <td>3119876543</td>
+                                <td>Literatura</td>
+                                <td class="actions">
+                                    <button class="btn btn-warning btn-sm" title="Editar"><i
+                                            class="fas fa-pen"></i></button>
+                                    <button class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><i class="fas fa-chalkboard-teacher icon-table"></i>P-003</td>
+                                <td>33445566</td>
+                                <td>Luis</td>
+                                <td>Ramírez</td>
+                                <td>3124567890</td>
+                                <td>Historia</td>
+                                <td class="actions">
+                                    <button class="btn btn-warning btn-sm" title="Editar"><i
+                                            class="fas fa-pen"></i></button>
+                                    <button class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><i class="fas fa-chalkboard-teacher icon-table"></i>P-004</td>
+                                <td>44556677</td>
+                                <td>Marta</td>
+                                <td>Sánchez</td>
+                                <td>3137890123</td>
+                                <td>Ciencias</td>
+                                <td class="actions">
+                                    <button class="btn btn-warning btn-sm" title="Editar"><i
+                                            class="fas fa-pen"></i></button>
+                                    <button class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="pagination-info">
+                        <small>Mostrando registros del 1 al 4 de un total de 4 registros</small>
+                        <div class="pagination">
+                            <a href="#" class="page-link disabled">Anterior</a>
+                            <a href="#" class="page-link active">1</a>
+                            <a href="#" class="page-link disabled">Siguiente</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="add-edit-form-container">
+                    <h4>Registro/Edición de Profesor</h4>
+                    <form class="add-edit-form">
+                        <div class="form-group-row">
+                            <div class="form-group">
+                                <label for="profesorID">ID Profesor</label>
+                                <input type="text" id="profesorID" name="profesorID" value="" placeholder="Ej: P-005">
+                            </div>
+                            <div class="form-group">
+                                <label for="documentoProfesor">Documento</label>
+                                <input type="text" id="documentoProfesor" name="documentoProfesor" value=""
+                                    placeholder="Ej: 55667788">
+                            </div>
+                        </div>
+                        <div class="form-group-row">
+                            <div class="form-group">
+                                <label for="nombresProfesor">Nombres</label>
+                                <input type="text" id="nombresProfesor" name="nombresProfesor" value=""
+                                    placeholder="Ej: Roberto">
+                            </div>
+                            <div class="form-group">
+                                <label for="apellidosProfesor">Apellidos</label>
+                                <input type="text" id="apellidosProfesor" name="apellidosProfesor" value=""
+                                    placeholder="Ej: Morales">
+                            </div>
+                        </div>
+                        <div class="form-group-row">
+                            <div class="form-group">
+                                <label for="telefonoProfesor">Teléfono</label>
+                                <input type="tel" id="telefonoProfesor" name="telefonoProfesor" value=""
+                                    placeholder="Ej: 3141112233">
+                            </div>
+                            <div class="form-group">
+                                <label for="especialidad">Especialidad</label>
+                                <input type="text" id="especialidad" name="especialidad" value=""
+                                    placeholder="Ej: Informática">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="emailProfesor">Email</label>
+                            <input type="email" id="emailProfesor" name="emailProfesor" value=""
+                                placeholder="Ej: roberto.morales@example.com">
+                        </div>
+                        <div class="form-actions">
+                            <button type="reset" class="btn btn-secondary">Limpiar</button>
+                            <button type="submit" class="btn btn-primary">Guardar</button>
+                            <button type="button" class="btn btn-danger" id="closeForm">Cerrar</button>
+                        </div>
+                    </form>
+                </div>
+                <footer class="footer">
+                    <p>&copy; Reservados todos los derechos</p>
+                    <p>Designed by <a href="#">BIBLIOTECA VIRTUAL</p>
+                </footer>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

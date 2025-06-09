@@ -1,21 +1,60 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inicio de Sesión - Biblioteca Virtual</title>
-  <link rel="stylesheet" href="assets/css/stylesheet.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Administrador - Biblioteca Virtual</title>
+    <link rel="stylesheet" href="../admin/assets/css/stilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
 </head>
+
 <body>
-  <div class="login-container">
-    <h1>Biblioteca Virtual</h1>
-    <form action="index.html" method="post">
-      <label for="usuario">Usuario</label>
-      <input type="text" name="usuario" required />
-      <label for="contraseña">Contraseña</label>
-      <input type="password" id="contraseña" name="contraseña" required />
-      <button type="submit">Iniciar Sesión</button>
-    </form>
-  </div>
+    <nav class="navbar">
+        <div class="container-fluid" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <div style="display: flex; align-items: center;">
+                <img src="assets/images/1.png" alt="Logo" width="70" height="50"
+                    style="margin-right: 10px;" />
+                <span class="navbar-brand" style="font-size: 1.5rem; color: var(--dark-text);">Biblioteca Virtual - Admin</span>
+            </div>
+            </div>
+    </nav>
+
+    <div id="bannerLogin">
+        <div class="container"> <div class="login-container">
+                <h2>Acceso de Administrador</h2>
+                <form action="dashboard.html" method="POST"> <div class="mb-3">
+                        <label for="admin_email" class="form-label">Correo Electrónico</label>
+                        <input type="email" class="form-control" id="admin_email" name="admin_email" placeholder="admin@example.com" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="admin_password" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="admin_password" name="admin_password" placeholder="Ingresa tu contraseña" required>
+                    </div>
+                    <div class="d-grid mb-3">
+                        <a href="dashboard.html" button type="submit" class="btn btn-primary"> entrar</a>
+                        
+                    </div>
+                    <div class="text-center" style="margin-top: 1rem;">
+                        <a href="#">¿Olvidaste tu contraseña?</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="pie-pagina">
+        <div class="contenido-footer">
+            <div class="informacion">
+                <ul>
+                    <li><strong>Central de llamadas</strong></li>
+                    <li>Valle de Aburrá y Oriente cercano: 604 360 70 80</li>
+                    <li>Para los demás municipios y regiones sin costo: 01 8000 415 455</li>
+                </ul>
+            </div>
+        </div>
+        <p style="text-align: center; margin-top: 20px;">&copy; 2025 Biblioteca Virtual. Todos los derechos reservados.</p>
+    </footer>
+
 </body>
 </html>
