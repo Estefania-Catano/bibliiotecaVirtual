@@ -732,4 +732,13 @@ body {
   color: black;
 }
 
+.imgPost{
+  width: 300px;
+  align-items: center;
+}
+
+.flex-shrink-0 img{
+  border-radius: 50%;
+  width: 100px;
+}
 /* ==========================================   Detalle  =============================================================== */
