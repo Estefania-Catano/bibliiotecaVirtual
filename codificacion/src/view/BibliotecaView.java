@@ -1,16 +1,16 @@
 package view;
 
-import model.Book;
+import models.book.Book;
 
 import java.util.List;
 import java.util.Scanner;
 
 // BibliotecaView.java
 public class BibliotecaView {
-    private Scanner scanner;
+    private Scanner sc;
 
     public BibliotecaView() {
-        scanner = new Scanner(System.in);
+        sc = new Scanner(System.in);
     }
 
     public void mostrarBienvenida() {
@@ -19,12 +19,12 @@ public class BibliotecaView {
 
     public String solicitarUsuario() {
         System.out.print("Ingrese su nombre de usuario: ");
-        return scanner.nextLine();
+        return sc.nextLine();
     }
 
     public String solicitarPassword() {
         System.out.print("Ingrese su contraseña: ");
-        return scanner.nextLine();
+        return sc.nextLine();
     }
 
     public void mostrarLoginExitoso(String nombreUsuario) {
@@ -47,7 +47,7 @@ public class BibliotecaView {
         System.out.println("3. Consultar préstamos activos");
         System.out.println("4. Consultar libros disponibles");
         System.out.println("5. Salir");
-        return scanner.nextInt();
+        return sc.nextInt();
     }
 
     public int mostrarCategorias(List<String> categorias) {
@@ -55,7 +55,7 @@ public class BibliotecaView {
         for (int i = 0; i < categorias.size(); i++) {
             System.out.println((i + 1) + ". " + categorias.get(i));
         }
-        return scanner.nextInt();
+        return sc.nextInt();
     }
 
     public int mostrarLibros(List<Book> libros) {
@@ -63,7 +63,7 @@ public class BibliotecaView {
         for (int i = 0; i < libros.size(); i++) {
             System.out.println((i + 1) + ". " + libros.get(i).getTitulo());
         }
-        return scanner.nextInt();
+        return sc.nextInt();
     }
 
     public void mostrarPrestamoExitoso(String titulo) {
@@ -118,7 +118,7 @@ public class BibliotecaView {
     }
 
     public void cerrarScanner() {
-        scanner.close();
+        sc.close();
     }
 
 

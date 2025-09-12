@@ -8,17 +8,13 @@ Un sistema de gestión de biblioteca desarrollado en Java que permite realizar p
 
 ## 🏗️ Arquitectura del Sistema
 
+El proyecto sigue **MVC** para separar responsabilidades:
+
+- **Modelo (Model)**: Entidades y casos de uso (lógica de negocio)
+- **Vista (View)**: Interacción por consola con el usuario
+- **Controlador (Controller)**: Orquesta el flujo entre modelo y vista
 
 
-El proyecto sigue el patrón **MVC** para una mejor separación de responsabilidades:
-
-
-
-- **Modelo (Model)**: Contiene las entidades y la lógica de negocio
-
-- **Vista (View)**: Maneja la interfaz de usuario y la interacción
-
-- **Controlador (Controller)**: Coordina entre el modelo y la vista
 
 
 
@@ -27,27 +23,22 @@ El proyecto sigue el patrón **MVC** para una mejor separación de responsabilid
 
 
 ```
-
 src/
-
-├── model/
-
-│   ├── Book.java              # Entidad Libro
-
-│   ├── User.java              # Entidad Usuario
-
-│   └── BibliotecaService.java # Lógica de negocio
-
-├── vista/
-
-│   └── BibliotecaView.java    # Interfaz de usuario
-
-├── controlador/
-
-│   └── BibliotecaController.java # Controlador principal
-
-└── App.java                   # Punto de entrada de la aplicación
-
+├── App.java                       # Punto de entrada
+├── controller/                    # Controladores (flujo de la aplicación)
+│   └── BibliotecaController.java
+├── models/                        # Entidades del dominio
+│   ├── book/
+│   │   └── Book.java
+│   └── user/
+│       └── User.java
+├── useCases/                      # Lógica de negocio por casos de uso
+│   ├── BookUseCases/
+│   │   └── BookUseCase.java
+│   └── UserUseCases/
+│       └── UserUseCase.java
+└── view/                          # Interfaz de usuario por consola
+    └── BibliotecaView.java
 ```
 
 
@@ -159,7 +150,7 @@ Para acceder al sistema utiliza las siguientes credenciales:
   ```bash
 
   java -cp out App
- ```
+```
 
 
 
@@ -345,27 +336,6 @@ Una vez autenticado, el sistema presenta las siguientes opciones:
 
 - **Testeo**: Cada capa puede ser probada independientemente
 
-
-
-## 🔄 Posibles Mejoras Futuras
-
-
-
-- [ ] Persistencia de datos en base de datos
-
-- [ ] Múltiples usuarios simultáneos
-
-- [ ] Sistema de reservas
-
-- [ ] Fechas de préstamo y devolución
-
-- [ ] Multas por retraso
-
-- [ ] Interfaz gráfica (GUI)
-
-- [ ] Sistema de búsqueda avanzada
-
-- [ ] Reportes y estadísticas
 
 
 

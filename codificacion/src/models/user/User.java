@@ -1,4 +1,4 @@
-package model;
+package models.user;
 
 public class User {
     private String nombre;

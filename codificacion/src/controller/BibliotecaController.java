@@ -1,18 +1,22 @@
 package controller;
 
-import model.BibliotecaService;
-import model.Book;
+
+import models.book.Book;
+import useCases.BookUseCases.BookUseCase;
+import useCases.UserUseCases.UserUseCase;
 import view.BibliotecaView;
 
 import java.util.List;
 
 public class BibliotecaController {
-    private BibliotecaService service;
+    private BookUseCase bookService;
+    private UserUseCase userService;
     private BibliotecaView view;
     private static final int MAX_INTENTOS = 3;
 
     public BibliotecaController() {
-        service = new BibliotecaService();
+        bookService = new BookUseCase();
+        userService = new UserUseCase();
         view = new BibliotecaView();
     }
 
@@ -33,8 +37,8 @@ public class BibliotecaController {
             String usuario = view.solicitarUsuario();
             String password = view.solicitarPassword();
 
-            if (service.autenticarUsuario(usuario, password)) {
-                view.mostrarLoginExitoso(service.getNombreUsuario());
+            if (userService.autenticarUsuario(usuario, password)) {
+                view.mostrarLoginExitoso(userService.getNombreUsuario());
                 return true;
             } else {
                 intentos++;
@@ -66,7 +70,7 @@ public class BibliotecaController {
                     consultarLibrosDisponibles();
                     break;
                 case 5:
-                    view.mostrarSalida(service.getCantidadPrestamos());
+                    view.mostrarSalida(bookService.getCantidadPrestamos());
                     break;
                 default:
                     view.mostrarOpcionInvalida();
@@ -76,12 +80,12 @@ public class BibliotecaController {
     }
 
     private void realizarPrestamo() {
-        List<String> categorias = service.getCategorias();
+        List<String> categorias = bookService.getCategorias();
         int opcionCategoria = view.mostrarCategorias(categorias);
 
         if (opcionCategoria >= 1 && opcionCategoria <= categorias.size()) {
             String categoria = categorias.get(opcionCategoria - 1);
-            List<Book> librosCategoria = service.getLibrosPorCategoria(categoria);
+            List<Book> librosCategoria = bookService.getLibrosPorCategoria(categoria);
 
             int opcionLibro = view.mostrarLibros(librosCategoria);
 
@@ -90,7 +94,7 @@ public class BibliotecaController {
             } else if (opcionLibro >= 1 && opcionLibro <= librosCategoria.size()) {
                 String titulo = librosCategoria.get(opcionLibro - 1).getTitulo();
 
-                if (service.prestarLibro(titulo)) {
+                if (bookService.prestarLibro(titulo)) {
                     view.mostrarPrestamoExitoso(titulo);
                 } else {
                     view.mostrarLibroYaPrestado(titulo);
@@ -102,12 +106,12 @@ public class BibliotecaController {
     }
 
     private void realizarDevolucion() {
-        List<String> categorias = service.getCategorias();
+        List<String> categorias = bookService.getCategorias();
         int opcionCategoria = view.mostrarCategorias(categorias);
 
         if (opcionCategoria >= 1 && opcionCategoria <= categorias.size()) {
             String categoria = categorias.get(opcionCategoria - 1);
-            List<Book> librosCategoria = service.getLibrosPorCategoria(categoria);
+            List<Book> librosCategoria = bookService.getLibrosPorCategoria(categoria);
 
             int opcionLibro = view.mostrarLibros(librosCategoria);
 
@@ -116,7 +120,7 @@ public class BibliotecaController {
             } else if (opcionLibro >= 1 && opcionLibro <= librosCategoria.size()) {
                 String titulo = librosCategoria.get(opcionLibro - 1).getTitulo();
 
-                if (service.devolverLibro(titulo)) {
+                if (bookService.devolverLibro(titulo)) {
                     view.mostrarDevolucionExitosa(titulo);
                 } else {
                     view.mostrarLibroNoTomado(titulo);
@@ -128,17 +132,17 @@ public class BibliotecaController {
     }
 
     private void consultarPrestamosActivos() {
-        List<Book> librosPrestados = service.getLibrosPrestados();
+        List<Book> librosPrestados = bookService.getLibrosPrestados();
         view.mostrarLibrosPrestados(librosPrestados);
     }
 
     private void consultarLibrosDisponibles() {
-        List<String> categorias = service.getCategorias();
+        List<String> categorias = bookService.getCategorias();
         int opcionCategoria = view.mostrarCategorias(categorias);
 
         if (opcionCategoria >= 1 && opcionCategoria <= categorias.size()) {
             String categoria = categorias.get(opcionCategoria - 1);
-            List<Book> librosDisponibles = service.getLibrosDisponiblesPorCategoria(categoria);
+                List<Book> librosDisponibles = bookService.getLibrosDisponiblesPorCategoria(categoria);
             view.mostrarLibrosDisponibles(librosDisponibles);
         }
     }
