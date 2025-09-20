@@ -1,8 +1,8 @@
-import controller.BibliotecaController;
+import User.controllers.UserController;
 
 public class App {
     public static void main(String[] args) {
-        BibliotecaController controller = new BibliotecaController();
-        controller.iniciarSistema();
+        UserController controller = new UserController();
+        controller.starSystem();
     }
 }

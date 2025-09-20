@@ -1,363 +1,227 @@
-# 📚 Sistema Biblioteca Virtual
+# 📚 Virtual Library Management System
 
+A comprehensive Java-based library management system that implements Object-Oriented Programming principles and the **Model-View-Controller (MVC)** architectural pattern for efficient book inventory and user management.
 
+## 🏗️ System Architecture
 
-Un sistema de gestión de biblioteca desarrollado en Java que permite realizar préstamos y devoluciones de libros utilizando el patrón arquitectónico **Modelo-Vista-Controlador (MVC)** y principios de **Programación Orientada a Objetos**.
+The project follows **MVC** pattern for clear separation of concerns:
 
+- **Model**: Domain entities and business logic (Use Cases)
+- **View**: Console-based user interface
+- **Controller**: Orchestrates the flow between model and view
 
-
-## 🏗️ Arquitectura del Sistema
-
-El proyecto sigue **MVC** para separar responsabilidades:
-
-- **Modelo (Model)**: Entidades y casos de uso (lógica de negocio)
-- **Vista (View)**: Interacción por consola con el usuario
-- **Controlador (Controller)**: Orquesta el flujo entre modelo y vista
-
-
-
-
-
-## 📁 Estructura del Proyecto
-
-
+## 📁 Project Structure
 
 ```
 src/
-├── App.java                       # Punto de entrada
-├── controller/                    # Controladores (flujo de la aplicación)
-│   └── BibliotecaController.java
-├── models/                        # Entidades del dominio
-│   ├── book/
-│   │   └── Book.java
-│   └── user/
-│       └── User.java
-├── useCases/                      # Lógica de negocio por casos de uso
-│   ├── BookUseCases/
-│   │   └── BookUseCase.java
-│   └── UserUseCases/
-│       └── UserUseCase.java
-└── view/                          # Interfaz de usuario por consola
-    └── BibliotecaView.java
+├── App.java                           # Application entry point
+├── User/                              # User management module
+│   ├── controllers/
+│   │   └── UserController.java        # User operations controller
+│   ├── models/
+│   │   └── User.java                  # User entity
+│   └── useCases/
+│       └── UserUseCase.java           # User business logic
+└── Inventory/                         # Book inventory module
+    ├── controllers/
+    │   └── InventoryController.java    # Inventory operations controller
+    ├── models/
+    │   └── Inventory.java             # Book entity
+    └── useCases/
+        └── InventoryUseCase.java      # Inventory business logic
 ```
 
+## 🎯 Key Features
 
+### ✅ Core Functionality
 
-## 🎯 Funcionalidades
+- **User Management**: Create, authenticate, and manage user accounts
+- **Book Inventory Management**: Add, update, delete, and view books
+- **Book Lending System**: Track book borrowing status
+- **Admin Authentication**: Secure admin access with limited login attempts
+- **Category Organization**: Books organized by categories
+- **Real-time Status Tracking**: Monitor book availability and borrowing status
 
+### 📖 System Capabilities
 
+#### 👤 User Management
+- User registration and authentication
+- Secure login with attempt limitations (max 3 tries)
+- User account management
 
-### ✅ Características Principales
+#### 📚 Book Inventory Management
+- Add new books to the library
+- Update existing book information
+- Delete books from the system
+- View all registered books with status
+- Lend books to users
+- Track borrowing status (Available/Borrowed)
 
+## 🔐 Authentication System
 
+The system includes a secure authentication mechanism:
 
-- **Autenticación de usuario** con sistema de intentos limitados
+- **Maximum 3 login attempts** before account lockout
+- **Credential validation** for admin access
+- **User session management**
 
-- **Gestión de préstamos** de libros por categorías
+## 🚀 Installation and Execution
 
-- **Gestión de devoluciones** con validación
+### Prerequisites
 
-- **Consulta de préstamos activos**
+- Java JDK 8 or higher
+- Java IDE (IntelliJ IDEA, Eclipse, VS Code) or command-line compiler
 
-- **Consulta de libros disponibles** por categoría
+### Setup Instructions
 
-- **Organización por categorías**: Ciencia ficción, Juveniles, Infantiles
+1. **Clone or download** the project
+2. **Navigate** to the project directory:
+   ```bash
+   cd codificacion
+   ```
+3. **Compile** all Java files:
+   ```bash
+   javac -d out src/User/models/*.java src/User/useCases/*.java src/User/controllers/*.java src/Inventory/models/*.java src/Inventory/useCases/*.java src/Inventory/controllers/*.java src/App.java
+   ```
+4. **Run** the application:
+   ```bash
+   java -cp out App
+   ```
 
+### IDE Execution
 
+1. Import the project into your preferred Java IDE
+2. Ensure proper package structure is maintained
+3. Run the `App.java` class as the main entry point
 
-### 📖 Catálogo de Libros
+## 📋 Main Menu System
 
-
-
-#### 🚀 Ciencia Ficción
-
-- Dune
-
-- Neuromante
-
-- Fundación
-
-
-
-#### 👥 Juveniles
-
-- Bajo la misma estrella
-
-- El corredor del laberinto
-
-- Divergente
-
-
-
-#### 🧸 Infantiles
-
-- El principito
-
-- Donde viven los monstruos
-
-- Harry Potter y la piedra filosofal
-
-
-
-## 🔐 Credenciales de Acceso
-
-
-
-Para acceder al sistema utiliza las siguientes credenciales:
-
-
-
-- **Usuario**: `Andrea.Benitez`
-
-- **Contraseña**: `1234`
-
-
-
-> ⚠️ **Nota**: El sistema permite máximo 3 intentos de inicio de sesión.
-
-
-
-## 🚀 Instalación y Ejecución
-
-
-
-### Requisitos Previos
-
-
-
-- Java JDK 8 o superior
-
-- Un IDE de Java (IntelliJ IDEA, Eclipse, VS Code, etc.) o compilador de línea de comandos
-
-
-
-### Pasos para ejecutar
-
-
-
-1. **Clonar o descargar** el proyecto
-
-2. **Compilar** todos los archivos Java:
-
-```bash
-
-  javac -d out src/model/*.java src/view/*.java src/controller/*.java src/App.java
-
-  ```
-
-3. **Ejecutar** la aplicación:
-
-  ```bash
-
-  java -cp out App
-```
-
-
-
-### Ejecución desde IDE
-
-
-
-1. Importar el proyecto en tu IDE favorito
-
-2. Asegurarte de que la estructura de carpetas sea correcta
-
-3. Ejecutar la clase `App.java`
-
-
-
-## 📋 Menú Principal
-
-
-
-Una vez autenticado, el sistema presenta las siguientes opciones:
-
-
+### Primary Menu Options
 
 ```
-
-1. Realizar un préstamo de libro
-
-2. Realizar una devolución de libro  
-
-3. Consultar préstamos activos
-
-4. Consultar libros disponibles
-
-5. Salir
-
+=== MAIN MENU ===
+1. Create new user
+2. Login as admin user
+3. View registered users
+4. Exit
 ```
 
+### Admin System Menu
 
+```
+=== ADMIN SYSTEM MENU ===
+1. View registered books
+2. Add new book
+3. Update book
+4. Lend book
+5. Delete book
+6. Exit
+```
 
-## 🔧 Detalles Técnicos
+## 🔧 Technical Implementation
 
+### Core Classes
 
-
-### Clases Principales
-
-
-
-#### 📦 Modelo (model/)
-
-
-
-- **`Book.java`**:
-
-&nbsp; - Representa un libro con título, categoría y estado de préstamo
-
-&nbsp; - Métodos: getters, setters, toString()
-
-
+#### 📦 Model Layer (`models/`)
 
 - **`User.java`**:
-
-&nbsp; - Maneja las credenciales del usuario
-
-&nbsp; - Método de validación: `validarCredenciales()`
-
-
-
-- **`BibliotecaService.java`**:
-
-&nbsp; - Contiene toda la lógica de negocio
-
-&nbsp; - Métodos principales: `prestarLibro()`, `devolverLibro()`, `autenticarUsuario()`
-
-
-
-#### 👁️ Vista (vista/)
-
-
-
-- **`BibliotecaView.java`**:
-
-&nbsp; - Maneja toda la interacción con el usuario
-
-&nbsp; - Métodos para mostrar menús, solicitar datos y mostrar mensajes
-
-
-
-#### 🎮 Controlador (controlador/)
-
-
-
-- **`BibliotecaController.java`**:
-
-&nbsp; - Coordina entre modelo y vista
-
-&nbsp; - Controla el flujo de la aplicación
-
-&nbsp; - Maneja la autenticación y el menú principal
-
-
-
-## 🎮 Guía de Uso
-
-
-
-### 1. Inicio de Sesión
-
-- Ejecutar la aplicación
-
-- Ingresar credenciales válidas
-
-- Máximo 3 intentos permitidos
-
-
-
-### 2. Realizar Préstamo
-
-- Seleccionar opción 1 del menú principal
-
-- Elegir categoría de libro
-
-- Seleccionar libro específico
-
-- El sistema validará disponibilidad
-
-
-
-### 3. Realizar Devolución
-
-- Seleccionar opción 2 del menú principal
-
-- Elegir categoría del libro a devolver
-
-- Seleccionar libro específico
-
-- El sistema validará que el libro esté prestado
-
-
-
-### 4. Consultar Préstamos Activos
-
-- Seleccionar opción 3
-
-- Ver lista de todos los libros prestados actualmente
-
-
-
-### 5. Consultar Libros Disponibles
-
-- Seleccionar opción 4
-
-- Elegir categoría
-
-- Ver disponibilidad de libros en esa categoría
-
-
-
-## ✨ Características del Diseño
-
-
-
-### Principios de POO Aplicados
-
-
-
-- **Encapsulación**: Atributos privados con métodos de acceso
-
-- **Abstracción**: Separación clara de responsabilidades
-
-- **Modularidad**: Clases especializadas para cada función
-
-
-
-### Ventajas del Patrón MVC
-
-
-
-- **Mantenibilidad**: Fácil modificar cualquier capa sin afectar las otras
-
-- **Escalabilidad**: Simple agregar nuevas funcionalidades
-
-- **Reutilización**: Componentes reutilizables
-
-- **Testeo**: Cada capa puede ser probada independientemente
-
-
-
-
-## 👨‍💻 Desarrollo
-
-
-
-Este proyecto fue desarrollado como una demostración de:
-
-
-
-- Conversión de código funcional a orientado a objetos
-
-- Implementación del patrón arquitectónico MVC
-
-- Aplicación de principios de diseño de software
-
-- Buenas prácticas de programación en Java
-
-
+  - Represents user entities with authentication
+  - Methods: `validCredential()`, getters, setters
+  - Encapsulates user data and validation logic
+
+- **`Inventory.java`**:
+  - Represents book entities with status tracking
+  - Properties: title, category, borrowing status
+  - Methods: getters, setters, `toString()`
+
+#### 🎮 Controller Layer (`controllers/`)
+
+- **`UserController.java`**:
+  - Manages user operations and authentication flow
+  - Handles main system navigation
+  - Coordinates between user model and view
+
+- **`InventoryController.java`**:
+  - Manages book inventory operations
+  - Handles admin system functionality
+  - Controls book lending and management processes
+
+#### 🔧 Use Cases Layer (`useCases/`)
+
+- **`UserUseCase.java`**:
+  - Contains user business logic
+  - Handles user CRUD operations
+  - Manages authentication processes
+
+- **`InventoryUseCase.java`**:
+  - Contains inventory business logic
+  - Handles book CRUD operations
+  - Manages book status and availability
+
+## 🎮 User Guide
+
+### 1. System Startup
+- Launch the application
+- Select from main menu options
+- Create users or login as admin
+
+### 2. User Management
+- **Create User**: Register new users in the system
+- **View Users**: Display all registered users
+- **Admin Login**: Access admin functionality with authentication
+
+### 3. Book Management (Admin Only)
+- **View Books**: Display all books with current status
+- **Add Book**: Register new books with title and category
+- **Update Book**: Modify existing book information
+- **Lend Book**: Change book status to borrowed
+- **Delete Book**: Remove books from the system
+
+## ✨ Design Principles
+
+### Object-Oriented Programming Features
+
+- **Encapsulation**: Private attributes with public access methods
+- **Abstraction**: Clear separation of concerns across layers
+- **Modularity**: Specialized classes for specific functionality
+- **Inheritance**: Structured class hierarchy
+- **Polymorphism**: Interface-based implementations
+
+### MVC Pattern Benefits
+
+- **Maintainability**: Easy to modify individual layers without affecting others
+- **Scalability**: Simple to add new features and functionality
+- **Reusability**: Components can be reused across different contexts
+- **Testability**: Each layer can be tested independently
+- **Separation of Concerns**: Clear responsibility distribution
+
+## 🛠️ Development Features
+
+This project demonstrates:
+
+- **Clean Architecture**: Well-structured code organization
+- **MVC Implementation**: Proper separation of model, view, and controller
+- **Java Best Practices**: Following Java coding standards and conventions
+- **Error Handling**: Comprehensive exception management
+- **User Experience**: Intuitive console-based interface
+- **Data Management**: Efficient in-memory data operations
+
+## 🔍 System Workflow
+
+1. **Application Start**: Initialize controllers and display main menu
+2. **User Registration**: Create new user accounts
+3. **Admin Authentication**: Secure login for administrative functions
+4. **Book Management**: Full CRUD operations on book inventory
+5. **Status Tracking**: Real-time monitoring of book availability
+6. **Session Management**: Proper user session handling
+
+## 📊 Data Management
+
+- **In-Memory Storage**: Efficient data management using Java Collections
+- **Status Tracking**: Real-time book availability monitoring
+- **User Management**: Secure user account handling
+- **Error Handling**: Comprehensive exception management
 
 ---
 
-
-
+*This project serves as a demonstration of Object-Oriented Programming principles, MVC architecture implementation, and Java development best practices in a practical library management context.*
