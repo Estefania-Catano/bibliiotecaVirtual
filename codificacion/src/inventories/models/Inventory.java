@@ -1,4 +1,4 @@
-package Inventory.models;
+package inventories.models;
 
 public class Inventory {
     private String title;

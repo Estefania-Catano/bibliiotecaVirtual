@@ -1,4 +1,4 @@
-import User.controllers.UserController;
+import users.controllers.UserController;
 
 public class App {
     public static void main(String[] args) {

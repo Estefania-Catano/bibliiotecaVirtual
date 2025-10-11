@@ -1,5 +1,5 @@
-package User.useCases;
-import User.models.User;
+package users.useCases;
+import users.models.User;
 
 import java.util.*;
 

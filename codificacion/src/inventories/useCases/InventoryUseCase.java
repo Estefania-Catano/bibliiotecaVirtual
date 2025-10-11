@@ -1,5 +1,5 @@
-package Inventory.useCases;
-import Inventory.models.Inventory;
+package inventories.useCases;
+import inventories.models.Inventory;
 
 
 import java.util.ArrayList;
