@@ -15,28 +15,28 @@ The project follows **MVC** pattern for clear separation of concerns:
 ```
 src/
 ├── App.java                           # Application entry point
-├── User/                              # User management module
+├── users/                              # users management module
 │   ├── controllers/
-│   │   └── UserController.java        # User operations controller
+│   │   └── UserController.java        # users operations controller
 │   ├── models/
-│   │   └── User.java                  # User entity
+│   │   └── users.java                  # users entity
 │   └── useCases/
-│       └── UserUseCase.java           # User business logic
-└── Inventory/                         # Book inventory module
+│       └── UserUseCase.java           # users business logic
+└── inventories/                         # Book inventory module
     ├── controllers/
-    │   └── InventoryController.java    # Inventory operations controller
+    │   └── InventoryController.java    # inventories operations controller
     ├── models/
-    │   └── Inventory.java             # Book entity
+    │   └── inventories.java             # Book entity
     └── useCases/
-        └── InventoryUseCase.java      # Inventory business logic
+        └── InventoryUseCase.java      # inventories business logic
 ```
 
 ## 🎯 Key Features
 
 ### ✅ Core Functionality
 
-- **User Management**: Create, authenticate, and manage user accounts
-- **Book Inventory Management**: Add, update, delete, and view books
+- **users Management**: Create, authenticate, and manage user accounts
+- **Book inventories Management**: Add, update, delete, and view books
 - **Book Lending System**: Track book borrowing status
 - **Admin Authentication**: Secure admin access with limited login attempts
 - **Category Organization**: Books organized by categories
@@ -44,12 +44,12 @@ src/
 
 ### 📖 System Capabilities
 
-#### 👤 User Management
-- User registration and authentication
+#### 👤 users Management
+- users registration and authentication
 - Secure login with attempt limitations (max 3 tries)
-- User account management
+- users account management
 
-#### 📚 Book Inventory Management
+#### 📚 Book inventories Management
 - Add new books to the library
 - Update existing book information
 - Delete books from the system
@@ -63,7 +63,7 @@ The system includes a secure authentication mechanism:
 
 - **Maximum 3 login attempts** before account lockout
 - **Credential validation** for admin access
-- **User session management**
+- **users session management**
 
 ## 🚀 Installation and Execution
 
@@ -81,7 +81,7 @@ The system includes a secure authentication mechanism:
    ```
 3. **Compile** all Java files:
    ```bash
-   javac -d out src/User/models/*.java src/User/useCases/*.java src/User/controllers/*.java src/Inventory/models/*.java src/Inventory/useCases/*.java src/Inventory/controllers/*.java src/App.java
+   javac -d out src/users/models/*.java src/users/useCases/*.java src/users/controllers/*.java src/inventories/models/*.java src/inventories/useCases/*.java src/inventories/controllers/*.java src/App.java
    ```
 4. **Run** the application:
    ```bash
@@ -124,12 +124,12 @@ The system includes a secure authentication mechanism:
 
 #### 📦 Model Layer (`models/`)
 
-- **`User.java`**:
+- **`users.java`**:
   - Represents user entities with authentication
   - Methods: `validCredential()`, getters, setters
   - Encapsulates user data and validation logic
 
-- **`Inventory.java`**:
+- **`inventories.java`**:
   - Represents book entities with status tracking
   - Properties: title, category, borrowing status
   - Methods: getters, setters, `toString()`
@@ -158,15 +158,15 @@ The system includes a secure authentication mechanism:
   - Handles book CRUD operations
   - Manages book status and availability
 
-## 🎮 User Guide
+## 🎮 users Guide
 
 ### 1. System Startup
 - Launch the application
 - Select from main menu options
 - Create users or login as admin
 
-### 2. User Management
-- **Create User**: Register new users in the system
+### 2. users Management
+- **Create users**: Register new users in the system
 - **View Users**: Display all registered users
 - **Admin Login**: Access admin functionality with authentication
 
@@ -203,13 +203,13 @@ This project demonstrates:
 - **MVC Implementation**: Proper separation of model, view, and controller
 - **Java Best Practices**: Following Java coding standards and conventions
 - **Error Handling**: Comprehensive exception management
-- **User Experience**: Intuitive console-based interface
+- **users Experience**: Intuitive console-based interface
 - **Data Management**: Efficient in-memory data operations
 
 ## 🔍 System Workflow
 
 1. **Application Start**: Initialize controllers and display main menu
-2. **User Registration**: Create new user accounts
+2. **users Registration**: Create new user accounts
 3. **Admin Authentication**: Secure login for administrative functions
 4. **Book Management**: Full CRUD operations on book inventory
 5. **Status Tracking**: Real-time monitoring of book availability
@@ -219,7 +219,7 @@ This project demonstrates:
 
 - **In-Memory Storage**: Efficient data management using Java Collections
 - **Status Tracking**: Real-time book availability monitoring
-- **User Management**: Secure user account handling
+- **users Management**: Secure user account handling
 - **Error Handling**: Comprehensive exception management
 
 ---

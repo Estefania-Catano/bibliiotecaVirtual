@@ -1,7 +1,7 @@
-package User.controllers;
-import User.models.User;
-import User.useCases.UserUseCase;
-import Inventory.controllers.InventoryController;
+package users.controllers;
+import users.models.User;
+import users.useCases.UserUseCase;
+import inventories.controllers.InventoryController;
 import java.util.Scanner;
 
 public class UserController {

@@ -1,12 +1,14 @@
-package User.models;
+package users.models;
 
 public class User {
     private String name;
     private String password;
+    /*private String role;*/
 
-    public User(String name, String password) {
+    public User(String name, String password /*,String role*/) {
         this.name = name;
         this.password = password;
+       /* this.role = role;*/
     }
 
     public User() {
@@ -32,4 +34,12 @@ public class User {
     public boolean validCredential(String name, String password) {
         return this.name.equals(name) && this.password.equals(password);
     }
+
+   /* public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }*/
 }
