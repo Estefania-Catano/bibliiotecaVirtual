@@ -1,7 +1,7 @@
-package Inventory.controllers;
+package inventories.controllers;
 
-import Inventory.models.Inventory;
-import Inventory.useCases.InventoryUseCase;
+import inventories.models.Inventory;
+import inventories.useCases.InventoryUseCase;
 
 
 
@@ -35,6 +35,8 @@ public class InventoryController {
     public String Delete(int index) {
         return this.InventoryUseCase.delete(index);
     }
+
+    // Admin Menu
 
     public void adminSystem(){
         System.out.println("Welcome to the virtual library admin system");
@@ -70,6 +72,47 @@ public class InventoryController {
                     deleteBook();
                     break;
                 case "6":
+                    System.out.println("Returning to main menu...");
+                    running = false;
+                    break;
+                default:
+                    System.out.println("Invalid option. Please select a valid option.");
+            }
+        }
+    }
+
+    // USER Menu
+
+    public void userSystem(){
+        System.out.println("Welcome to the virtual library user system");
+
+        boolean running = true;
+        while (running) {
+            System.out.println("\n=== USER SYSTEM MENU ===");
+            System.out.println("1. View registered books");
+            System.out.println("2. Lend book");
+            System.out.println("3. Return book");
+            System.out.println("4. Exit");
+            System.out.print("Select an option: ");
+
+            String option = sc.nextLine();
+
+            switch (option) {
+                case "1":
+                    System.out.println(all());
+                    break;
+
+
+                case "2":
+                    lendBook();
+                    break;
+
+                case "3":
+                    returnBook();
+                    break;
+
+
+                case "4":
                     System.out.println("Returning to main menu...");
                     running = false;
                     break;
@@ -123,6 +166,30 @@ public class InventoryController {
                 String category = currentBook.getCategory();
                 boolean status = true; 
                 
+                String result = Update(index, title, category, status);
+                System.out.println(result);
+            } else {
+                System.out.println("Invalid book index.");
+            }
+        } catch (Exception e) {
+            System.out.println("Invalid input. Please enter a valid number.");
+        }
+    }
+
+    private  void  returnBook(){
+        System.out.println("\n=== RETURN BOOK ===");
+        System.out.println(all());
+        System.out.print("Enter the number of the book to return: ");
+        try {
+            int index = Integer.parseInt(sc.nextLine()) - 1;
+
+
+            Inventory currentBook = InventoryUseCase.getBook(index);
+            if (currentBook != null) {
+                String title = currentBook.getTitle();
+                String category = currentBook.getCategory();
+                boolean status = false;
+
                 String result = Update(index, title, category, status);
                 System.out.println(result);
             } else {
