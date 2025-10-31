@@ -1,21 +1,22 @@
-package users.useCases;
-import users.models.User;
+package org.bibliotecavirtual.users.useCases;
+import org.bibliotecavirtual.users.models.User;
+import org.bibliotecavirtual.users.datasources.UserDatasource;
 
 import java.util.*;
 
 
 public class UserUseCase {
-    private final List<User> users;
+    private final UserDatasource userDatasource;
 
    public UserUseCase(){
-       this.users = new ArrayList<>();
+       this.userDatasource = new UserDatasource();
    }
 
    // Create New User
 
     public String create (User user) {
         try {
-            this.users.add(user);
+            this.userDatasource.save(user);
             return "User created successfully";
         } catch (Exception e) {
             return "Error creating user: " + e.getMessage();
@@ -26,14 +27,14 @@ public class UserUseCase {
     // read Users
     public String all(){
         try {
-            if (users.isEmpty()) {
+            if (userDatasource.findAll().isEmpty()) {
                 return "No registered users.";
             }
             
             StringBuilder result = new StringBuilder();
             result.append("=== REGISTERED USERS ===\n");
-            for (int i = 0; i < users.size(); i++) {
-                User user = users.get(i);
+            for (int i = 0; i < userDatasource.findAll().size(); i++) {
+                User user = userDatasource.findAll().get(i);
                 result.append(i + 1)
                         .append(". User: ")
                         .append(user.getName())
@@ -50,9 +51,9 @@ public class UserUseCase {
     public String update (int index, User userIn) {
         try {
             User userFound = new User();
-            for (int i = 0; i < users.size(); i++) {
+            for (int i = 0; i < userDatasource.findAll().size(); i++) {
                 if (index == i) {
-                    User user = users.get(index);
+                    User user = userDatasource.findAll().get(index);
                     user.setName(userIn.getName());
                     user.setPassword(userIn.getPassword());
                     userFound = user;
@@ -68,7 +69,7 @@ public class UserUseCase {
     // Delete User
     public String delete (int index) {
         try {
-            users.remove(index);
+            userDatasource.deleteById((long) index);
             return "User has been deleted successfully";
         } catch (Exception e) {
             return "Error deleting user: " + e.getMessage();
@@ -76,6 +77,7 @@ public class UserUseCase {
 }
 
     public boolean authenticate(String name, String password) {
+        List<User> users = userDatasource.findAll();
         for (User user : users) {
             if (user.validCredential(name, password)) {
                 return true;

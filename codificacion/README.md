@@ -13,22 +13,40 @@ The project follows **MVC** pattern for clear separation of concerns:
 ## 📁 Project Structure
 
 ```
-src/
-├── App.java                           # Application entry point
-├── users/                              # users management module
-│   ├── controllers/
-│   │   └── UserController.java        # users operations controller
-│   ├── models/
-│   │   └── users.java                  # users entity
-│   └── useCases/
-│       └── UserUseCase.java           # users business logic
-└── inventories/                         # Book inventory module
-    ├── controllers/
-    │   └── InventoryController.java    # inventories operations controller
-    ├── models/
-    │   └── inventories.java             # Book entity
-    └── useCases/
-        └── InventoryUseCase.java      # inventories business logic
+.
+├── pom.xml
+├── README.md
+└── src/
+    └── main/
+        ├── java/
+        │   └── org/
+        │       └── bibliotecavirtual/
+        │           ├── BibliotecaVirtualApplication.java   # Application entry point
+        │           ├── PropertiesLoader.java
+        │           ├── inventories/                        # Book inventory module
+        │           │   ├── controllers/
+        │           │   │   └── InventoryController.java
+        │           │   ├── datasources/
+        │           │   │   └── InventoryDatasource.java
+        │           │   ├── models/
+        │           │   │   ├── Inventory.java
+        │           │   │   ├── InventoryRequest.java
+        │           │   │   └── InventoryResponse.java
+        │           │   └── useCases/
+        │           │       └── InventoryUseCase.java
+        │           └── users/                              # Users management module
+        │               ├── controllers/
+        │               │   └── UserController.java
+        │               ├── datasources/
+        │               │   └── UserDatasource.java
+        │               ├── models/
+        │               │   ├── User.java
+        │               │   ├── UserRequest.java
+        │               │   └── UserResponse.java
+        │               └── useCases/
+        │                   └── UserUseCase.java
+        └── resources/
+            └── application.properties
 ```
 
 ## 🎯 Key Features
@@ -225,3 +243,4 @@ This project demonstrates:
 ---
 
 *This project serves as a demonstration of Object-Oriented Programming principles, MVC architecture implementation, and Java development best practices in a practical library management context.*
+# TestBD

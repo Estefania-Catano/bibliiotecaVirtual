@@ -1,7 +1,7 @@
-package users.controllers;
-import users.models.User;
-import users.useCases.UserUseCase;
-import inventories.controllers.InventoryController;
+package org.bibliotecavirtual.users.controllers;
+import org.bibliotecavirtual.users.models.User;
+import org.bibliotecavirtual.users.useCases.UserUseCase;
+import org.bibliotecavirtual.inventories.controllers.InventoryController;
 import java.util.Scanner;
 
 public class UserController {

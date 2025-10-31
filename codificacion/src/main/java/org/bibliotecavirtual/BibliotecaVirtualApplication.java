@@ -1,6 +1,8 @@
-import users.controllers.UserController;
+package org.bibliotecavirtual;
 
-public class App {
+import org.bibliotecavirtual.users.controllers.UserController;
+
+public class BibliotecaVirtualApplication {
     public static void main(String[] args) {
         UserController controller = new UserController();
         controller.starSystem();
