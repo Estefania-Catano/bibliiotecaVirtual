@@ -1,8 +1,26 @@
-package inventories.models;
+package org.bibliotecavirtual.inventories.models;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import jakarta.persistence.Id;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Column;
+
+@Entity
+@Table(name = "inventories")
 public class Inventory {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(name = "title", nullable = false)
     private String title;
+
+    @Column(name = "category", nullable = false)
     private String category;
+    
+    @Column(name = "status", nullable = false)
     private boolean status;
 
     public Inventory(String title, String category, boolean status) {
@@ -13,6 +31,14 @@ public class Inventory {
 
     public Inventory() {
 
+    }
+
+    public Long getId() {
+        return id;
+    }
+    
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getTitle() {

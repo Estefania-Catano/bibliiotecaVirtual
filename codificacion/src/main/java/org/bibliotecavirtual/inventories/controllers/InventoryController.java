@@ -1,7 +1,7 @@
-package inventories.controllers;
+package org.bibliotecavirtual.inventories.controllers;
 
-import inventories.models.Inventory;
-import inventories.useCases.InventoryUseCase;
+import org.bibliotecavirtual.inventories.models.Inventory;
+import org.bibliotecavirtual.inventories.useCases.InventoryUseCase;
 
 
 

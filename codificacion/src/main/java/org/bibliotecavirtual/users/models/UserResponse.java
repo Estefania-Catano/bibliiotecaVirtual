@@ -1,18 +1,28 @@
-package users.models;
+package org.bibliotecavirtual.users.models;
 
-public class User {
+public class UserResponse {
+    
+    private Long id;
     private String name;
     private String password;
     /*private String role;*/
 
-    public User(String name, String password /*,String role*/) {
-        this.name = name;
-        this.password = password;
-       /* this.role = role;*/
+    public UserResponse(User user) {
+        this.id = user.getId();
+        this.name = user.getName();
+        this.password = user.getPassword();
     }
 
-    public User() {
+    public UserResponse() {
 
+    }
+
+    public Long getId() {
+        return id;
+    }
+    
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -43,3 +53,4 @@ public class User {
         this.role = role;
     }*/
 }
+
